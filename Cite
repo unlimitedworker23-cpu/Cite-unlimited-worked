@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Worked | 身体・メンタル・AIでビジネスを最適化する</title>
+    <meta name="description" content="20-40代のビジネスパーソン向け。ライフコーチング、筋トレ、生成AI活用コンサルティングで、キャリアと人生のパフォーマンスを最大化するプログラム。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a', /* slate-900 */
+                            primary: '#1e293b', /* slate-800 */
+                            accent: '#06b6d4', /* Cyan-500: Tech & Future feel */
+                            accent2: '#d4af37', /* Gold: Physical Strength */
+                            light: '#f8fafc',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .hero-bg {
+            background-color: #0f172a;
+            /* Image suggesting Future + Business + Strength */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        /* Calendar Wrapper Styles */
+        .calendar-wrapper {
+            position: relative;
+            width: 100%;
+            height: 700px; /* デフォルトの高さ */
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+        .calendar-wrapper iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+        }
+        @media (max-width: 640px) {
+            .calendar-wrapper {
+                height: 800px; /* モバイル時は少し高さを確保 */
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased scroll-smooth">
+
+    <!-- Header / Navigation -->
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-sm shadow-md text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-black text-xl tracking-wider uppercase flex items-center">
+                        <i class="fa-solid fa-layer-group text-brand-accent mr-2"></i>Unlimited Worked
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#problem" class="hover:text-brand-accent transition duration-300 text-sm font-medium">課題</a>
+                    <a href="#solution" class="hover:text-brand-accent transition duration-300 text-sm font-medium">3つの武器</a>
+                    <a href="#plans" class="hover:text-brand-accent transition duration-300 text-sm font-medium">プラン</a>
+                    <a href="#contact" class="bg-brand-accent hover:bg-cyan-600 text-white px-4 py-2 rounded-sm font-bold transition duration-300 text-sm shadow-lg shadow-cyan-500/30">
+                        無料相談を予約
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-accent focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-primary border-t border-slate-700">
+            <a href="#problem" class="block py-3 px-4 hover:bg-slate-700 hover:text-brand-accent transition">課題</a>
+            <a href="#solution" class="block py-3 px-4 hover:bg-slate-700 hover:text-brand-accent transition">3つの武器</a>
+            <a href="#plans" class="block py-3 px-4 hover:bg-slate-700 hover:text-brand-accent transition">プラン</a>
+            <a href="#contact" class="block py-3 px-4 bg-brand-accent text-white font-bold text-center mt-2">無料相談を予約</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center px-4 relative">
+        <div class="max-w-5xl mx-auto pt-16">
+            <div class="inline-block px-4 py-1 mb-6 border border-brand-accent/50 rounded-full bg-brand-accent/10">
+                <p class="text-brand-accent font-bold tracking-widest uppercase text-xs md:text-sm">Physical x Mental x AI Technology</p>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                「時間がない」を言い訳にするのは、<br>
+                もう終わりにしよう。
+            </h1>
+            <p class="text-slate-300 text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                <span class="text-white font-bold">筋トレ</span>でエナジーを高め、
+                <span class="text-white font-bold">コーチング</span>で迷いを断ち、<br class="hidden md:block">
+                <span class="text-brand-accent font-bold">生成AI</span>で業務を劇的に効率化する。<br>
+                現代のビジネスアスリートに不可欠な「3つのOS」を同時インストール。
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-brand-accent hover:bg-cyan-600 text-white font-bold py-4 px-8 rounded shadow-lg shadow-cyan-500/20 transition transform hover:scale-105 duration-300 text-lg">
+                    無料コンサルティング (30分)
+                </a>
+                <a href="#solution" class="border border-slate-500 text-slate-300 hover:bg-slate-800 hover:text-white hover:border-white font-bold py-4 px-8 rounded transition duration-300 text-lg">
+                    メソッドを見る
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 animate-bounce text-white/50">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Problem / Agitation Section -->
+    <section id="problem" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-4">
+                    なぜ、あなたの努力は<br class="md:hidden">「成果」に直結しないのか？
+                </h2>
+                <p class="text-slate-600">それは、どれか一つが欠けているからです。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-brand-accent2 hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-brand-accent2/10 rounded-full flex items-center justify-center text-brand-accent2 text-2xl mr-4">
+                            <i class="fa-solid fa-battery-quarter"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-primary">Physical不足</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <strong>「夕方には集中力が切れる」</strong><br>
+                        脳のパフォーマンスは体力に依存します。体力がなければ、どんなに優れたスキルも長時間発揮できません。
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-slate-400 hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 text-2xl mr-4">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-primary">Mentalの迷い</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <strong>「本当にやりたいことが不明確」</strong><br>
+                        多忙さに流され、キャリアの軸がブレている状態。ゴールが見えないマラソンは、誰だって走れません。
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-slate-50 p-8 rounded-lg border-t-4 border-brand-accent hover:shadow-lg transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-brand-accent/10 rounded-full flex items-center justify-center text-brand-accent text-2xl mr-4">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-primary">Techの遅れ</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <strong>「雑務で時間が消えていく」</strong><br>
+                        AIを使えば5分で終わる資料作成に2時間かけていませんか？時間の使い方が旧来のままでは、自己投資の時間は永遠に作れません。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-brand-primary text-white relative overflow-hidden">
+        <!-- Decoration background -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
+             <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-accent rounded-full blur-[100px]"></div>
+             <div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-brand-accent2 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-accent font-bold tracking-widest uppercase mb-2">The Trinity Method</h2>
+                <h3 class="text-3xl md:text-4xl font-bold">心技体の「技」を、AIへアップデートする。</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 lg:gap-8 items-stretch">
+                <!-- Pillar 1 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-lg relative overflow-hidden group hover:border-brand-accent2 transition duration-300">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <i class="fa-solid fa-dumbbell text-9xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-accent2 mb-4">1. Body Make</h4>
+                    <p class="text-slate-300 mb-4 h-24">
+                        テストステロン値を高め、「勝ち切るマインド」の土台を作る。忙しいビジネスマンに特化した高効率トレーニング。
+                    </p>
+                    <ul class="text-sm text-slate-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-accent2 mr-2"></i>週2回・30分の時短メソッド</li>
+                        <li><i class="fa-solid fa-check text-brand-accent2 mr-2"></i>会食に対応した食事戦略</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-lg relative overflow-hidden group hover:border-slate-300 transition duration-300 mt-4 lg:mt-0">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <i class="fa-solid fa-brain text-9xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">2. Coaching</h4>
+                    <p class="text-slate-300 mb-4 h-24">
+                        思考のバイアスを取り除き、行動を阻害するメンタルブロックを破壊する。目標達成への最短ルートを設計。
+                    </p>
+                    <ul class="text-sm text-slate-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-white mr-2"></i>自己効力感の再構築</li>
+                        <li><i class="fa-solid fa-check text-white mr-2"></i>キャリアビジョンの言語化</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-lg relative overflow-hidden group hover:border-brand-accent transition duration-300 mt-4 lg:mt-0">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
+                        <i class="fa-solid fa-microchip text-9xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-brand-accent mb-4">3. AI Productivity</h4>
+                    <p class="text-slate-300 mb-4 h-24">
+                        <span class="text-brand-accent font-bold">ここが最大の特徴です。</span><br>
+                        ChatGPTやClaude等の生成AIを活用し、あなたの業務時間を圧縮。「ジムに行く時間」を技術で創出します。
+                    </p>
+                    <ul class="text-sm text-slate-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>メール・資料作成の自動化</li>
+                        <li><i class="fa-solid fa-check text-brand-accent mr-2"></i>壁打ち相手としてのAI活用法</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-primary">Total Programs</h2>
+                <p class="text-slate-600 mt-2">あなたのフェーズに合わせた3つのプラン</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-xl transition duration-300 p-8 border border-slate-100 flex flex-col">
+                    <div class="mb-4">
+                        <span class="bg-slate-200 text-slate-700 text-xs font-bold px-2 py-1 rounded uppercase">Body & Mind</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-primary mb-2">ライトプラン</h3>
+                    <p class="text-slate-500 text-xs mb-6">まずは身体とメンタルを整えたい方</p>
+                    <div class="text-3xl font-bold text-brand-primary mb-6">¥30,000<span class="text-sm text-slate-400 font-normal">/月</span></div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center text-sm text-slate-600"><i class="fa-solid fa-check text-brand-accent2 mr-2"></i> 月1回 オンラインコーチング</li>
+                        <li class="flex items-center text-sm text-slate-600"><i class="fa-solid fa-check text-brand-accent2 mr-2"></i> 週1回 トレーニングメニュー作成</li>
+                        <li class="flex items-center text-sm text-slate-400"><i class="fa-solid fa-minus text-slate-300 mr-2"></i> AIコンサルティングなし</li>
+                    </ul>
+                    <a href="#contact" class="block text-center border border-brand-primary text-brand-primary font-bold py-3 rounded hover:bg-brand-primary hover:text-white transition">選択する</a>
+                </div>
+
+                <!-- Standard Plan (Featured) -->
+                <div class="bg-white rounded-lg shadow-2xl p-8 border-2 border-brand-accent relative transform md:-translate-y-4 flex flex-col">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl uppercase">Most Popular</div>
+                    <div class="mb-4">
+                        <span class="bg-brand-primary text-white text-xs font-bold px-2 py-1 rounded uppercase">Hybrid</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-primary mb-2">スタンダード</h3>
+                    <p class="text-slate-500 text-xs mb-6">身体を変え、AIで時間を生み出す</p>
+                    <div class="text-4xl font-bold text-brand-primary mb-6">¥65,000<span class="text-sm text-slate-400 font-normal">/月</span></div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center text-sm text-brand-primary font-bold"><i class="fa-solid fa-check text-brand-accent mr-2"></i> 月2回 総合セッション (60分)</li>
+                        <li class="flex items-center text-sm text-brand-primary"><i class="fa-solid fa-check text-brand-accent mr-2"></i> フォームチェック & 食事管理</li>
+                        <li class="bg-brand-accent/10 p-2 rounded flex items-start text-sm text-brand-primary">
+                            <i class="fa-solid fa-robot text-brand-accent mt-1 mr-2"></i> 
+                            <span><strong>AI実務サポート:</strong><br>あなたの業務に合わせたプロンプト作成・ツール選定支援</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-brand-accent text-white font-bold py-3 rounded hover:bg-cyan-600 transition shadow-lg">無料相談で詳しく聞く</a>
+                </div>
+
+                <!-- Executive Plan -->
+                <div class="bg-white rounded-lg shadow-sm hover:shadow-xl transition duration-300 p-8 border border-slate-100 flex flex-col">
+                    <div class="mb-4">
+                        <span class="bg-slate-800 text-brand-accent text-xs font-bold px-2 py-1 rounded uppercase">Executive</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-primary mb-2">エグゼクティブ</h3>
+                    <p class="text-slate-500 text-xs mb-6">事業成長まで見据えたフルパートナー</p>
+                    <div class="text-3xl font-bold text-brand-primary mb-6">¥150,000<span class="text-sm text-slate-400 font-normal">/月</span></div>
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-center text-sm text-slate-600"><i class="fa-solid fa-check text-brand-accent mr-2"></i> 月4回 対面/オンライン 自由設定</li>
+                        <li class="flex items-center text-sm text-slate-600"><i class="fa-solid fa-check text-brand-accent mr-2"></i> パーソナルトレーニング同行</li>
+                        <li class="flex items-center text-sm text-slate-600"><i class="fa-solid fa-check text-brand-accent mr-2"></i> <strong>社内AI導入コンサルティング付</strong></li>
+                        <li class="flex items-center text-sm text-slate-600"><i class="fa-solid fa-check text-brand-accent mr-2"></i> 24時間 Chatサポート</li>
+                    </ul>
+                    <a href="#contact" class="block text-center border border-brand-primary text-brand-primary font-bold py-3 rounded hover:bg-brand-primary hover:text-white transition">選択する</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Coach Profile -->
+    <section class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/3">
+                    <div class="aspect-[3/4] bg-slate-200 rounded-lg overflow-hidden relative">
+                         <!-- Profile Image -->
+                         <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coach Profile" class="object-cover w-full h-full grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-bold text-brand-primary mb-2">Coach Profile</h2>
+                    <h3 class="text-4xl font-black mb-4">HEAD COACH <span class="text-lg font-normal text-slate-500 ml-2">Career & Life Strategist</span></h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        フリーター生活を経て、一念発起し海外大学へ進学。ワーキングホリデーにて海外就労を経験後、帰国。<br>
+                        しかし、コロナ禍の影響で就職した先は、過酷な労働環境のいわゆる「ブラック企業」だった。<br><br>
+                        
+                        「このままでは終われない」という強い意志のもと、メンタルとフィジカルを徹底的に鍛え直し、戦略的なキャリア構築を実行。<br>
+                        転職を繰り返しながら市場価値を高め、わずか5年で年収を3倍にまで引き上げることに成功。<br>
+                        現在は外資系企業の営業職として最前線で働きながら、どん底から這い上がり、理想のキャリアを掴むための「生存戦略（心・技・体・AI）」を伝授している。
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded text-xs font-bold border border-slate-200">外資系営業職</span>
+                        <span class="bg-brand-accent/10 text-brand-accent px-3 py-1 rounded text-xs font-bold border border-brand-accent/20">年収3倍メソッド</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded text-xs font-bold border border-slate-200">海外ビジネス経験</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-brand-primary mb-12">よくあるご質問</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-lg shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium p-6 list-none text-brand-primary">
+                        <span>AIの知識が全くありませんが、ついていけますか？</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-6 pb-6 text-sm leading-relaxed">
+                        全く問題ありません。エンジニア向けの難しいプログラミングではなく、ChatGPTなどを使って「明日のメール返信をどう楽にするか」「会議の議事録をどう自動化するか」といった、すぐに使える実務レベルの活用法を画面共有しながら伝授します。
+                    </div>
+                </details>
+                <details class="group bg-white rounded-lg shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium p-6 list-none text-brand-primary">
+                        <span>筋トレとAI、どちらを優先して教えてもらえますか？</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-6 pb-6 text-sm leading-relaxed">
+                        あなたの現状の課題に合わせます。「まずは体力をつけたい」なら筋トレ7割、「とにかく時間がなくてジムに行けない」ならAI効率化7割で時間を作るところから始めます。柔軟に配分を調整できるのが本プログラムの強みです。
+                    </div>
+                </details>
+                <details class="group bg-white rounded-lg shadow-sm cursor-pointer">
+                    <summary class="flex justify-between items-center font-medium p-6 list-none text-brand-primary">
+                        <span>予約後の流れを教えてください。</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-slate-600 px-6 pb-6 text-sm leading-relaxed">
+                        まずはGoogleフォームより事前情報をご入力ください。その後、カレンダーより日時を選択していただくと、ご登録のメールアドレスに予約完了メールが届きます。そのメール内に「Google Meet」のリンクが記載されていますので、当日ご参加ください。
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Booking (Google Integrated) -->
+    <section id="contact" class="py-20 bg-brand-primary text-center px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-6">
+                身体と脳を、<br>アップデートする準備はいいですか？
+            </h2>
+            <p class="text-slate-300 text-lg mb-10">
+                以下の2ステップで、無料コンサルティング予約を完了してください。<br>
+                Googleサービス統合により、効率的に日程調整が可能です。
+            </p>
+            
+            <div class="space-y-8">
+                <!-- Step 1: Google Form -->
+                <div class="bg-white rounded-lg p-6 md:p-8 shadow-lg border-l-4 border-brand-accent text-left">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div>
+                            <span class="bg-brand-accent text-white text-xs font-bold px-2 py-1 rounded uppercase mb-2 inline-block">Step 1</span>
+                            <h3 class="text-xl font-bold text-brand-primary mb-2">
+                                事前ヒアリングシートへの記入
+                            </h3>
+                            <p class="text-slate-600 text-sm">
+                                限られた時間で最大の成果を出すため、現在の課題や目標をGoogleフォームにて事前にお知らせください。<br>
+                                <span class="text-xs text-slate-400">※回答内容は自動的に保存されます。送信後、このページに戻って日時予約を行ってください。</span>
+                            </p>
+                        </div>
+                        <!-- 
+                           【★要修正1】
+                           以下の href="" の中身を、作成したGoogleフォームの「回答用URL」に書き換えてください。
+                           例: href="https://docs.google.com/forms/d/e/xxxxx/viewform"
+                        -->
+                        <a href="https://docs.google.com/forms/d/12RBFAvWY25SKrMnFYJp-0guD4IK1EF9CULkf_v53qwc/edit" target="_blank" class="flex-shrink-0 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded transition flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-file-pen mr-2"></i> ヒアリングシートに入力
+                            <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 2: Google Calendar Embed Area -->
+                <div class="bg-white rounded-lg shadow-2xl shadow-cyan-500/10 overflow-hidden">
+                    <div class="p-6 bg-slate-50 border-b border-slate-200 text-left">
+                        <span class="bg-brand-primary text-white text-xs font-bold px-2 py-1 rounded uppercase mb-2 inline-block">Step 2</span>
+                        <h3 class="text-xl font-bold text-brand-primary flex items-center">
+                            <i class="fa-regular fa-calendar-check text-brand-accent mr-2"></i> 日時の選択 (Googleカレンダー)
+                        </h3>
+                        <p class="text-sm text-slate-500 mt-1">
+                            リアルタイムの空き状況から、ご都合の良い日時を選択してください。<br>
+                            ※予約完了と同時にGoogle MeetのURLが自動発行されます。
+                        </p>
+                    </div>
+                    
+                    <div class="calendar-wrapper">                                     
+                        <iframe src="https://calendar.google.com/calendar/embed?src=unlimited.worker23%40gmail.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                        
+                        <div class="flex flex-col items-center justify-center h-full bg-slate-50 text-slate-400 p-8 border-2 border-dashed border-slate-200 m-4 rounded">
+                            <i class="fa-brands fa-google text-4xl mb-4"></i>
+                            <p class="font-bold">ここにGoogleカレンダーの埋め込みコード (iframe) を貼り付けてください</p>
+                            <p class="text-xs mt-2">（コードを貼り付けると、このメッセージの代わりに実際のカレンダーが表示されます）</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer area note -->
+            <div class="mt-12 text-slate-400 text-sm">
+                <p>
+                    法人での導入相談など、上記以外の内容につきましては<br class="md:hidden">
+                    <!-- 
+                       【★要修正3】
+                       以下の href="" を、お問い合わせ用のフォームURL（またはメールリンク mailto:xxx）に書き換えてください。
+                    -->
+                    <a href="https://docs.google.com/forms/d/19ZE6u-Jto0qb6JO40Hi5RbG6XqjUgolarh5PrsNRPOs/edit" class="text-brand-accent hover:text-white transition font-medium underline">こちらのお問い合わせフォーム</a>よりご連絡ください。
+                </p>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-16">
+                &copy; 2024 Unlimited Worked. All Rights Reserved.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
